@@ -1,0 +1,19 @@
+ /* 
+  * this doc handles things like positioning (padding, size, display, etc)
+  * colors are handled by setColors.js
+  */
+nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+nav a {
+    display: inline;
+    padding:inherit;
+    text-decoration: none;
+}
+nav div {
+    display: inline;
+    padding: inherit;
+    padding-left: 20px;
+    padding-right: 20px;
+}
