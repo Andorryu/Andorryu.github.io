@@ -1,9 +1,9 @@
 
-// NAVBAR CONSTS
+// NAVBAR CONSTANTS
 
-const primary = "#fdf7ea";
-const secondary = "#ec9832";
-const tertiary = "";
+const primaryColor = "#fdf7ea";
+const secondaryColor = "#ec9832";
+const tertiaryColor = "";
 
 const navItems = [
     {
@@ -28,26 +28,27 @@ function randColor()
 let randPrimary = randColor();
 let randSecondary = randColor();
 
-// END NAVBAR CONSTS
+// END NAVBAR CONSTANTS
+
 
 function initColors(nav)
 {
-    nav.style.backgroundColor = secondary;
+    nav.style.backgroundColor = secondaryColor;
     let navItems = nav.querySelectorAll("div");
     for (let item of navItems)
     {
         // default background and text colors
-        item.style.backgroundColor = secondary;
-        item.style.color = primary;
+        item.style.backgroundColor = secondaryColor;
+        item.style.color = primaryColor;
 
         // how they change
         item.addEventListener("mouseover", () => {
-            item.style.backgroundColor = primary;
-            item.style.color = secondary;
+            item.style.backgroundColor = primaryColor;
+            item.style.color = secondaryColor;
         });
         item.addEventListener("mouseout", () => {
-            item.style.backgroundColor = secondary;
-            item.style.color = primary;
+            item.style.backgroundColor = secondaryColor;
+            item.style.color = primaryColor;
         });
     }
 }
@@ -55,7 +56,7 @@ function initColors(nav)
 
 window.addEventListener("load", () => {
     // set doc background
-    document.body.style.backgroundColor = primary;
+    document.body.style.backgroundColor = primaryColor;
     // NAVBAR
     // grab nav element
     let nav = document.querySelector("nav");
