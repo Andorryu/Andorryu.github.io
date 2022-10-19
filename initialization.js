@@ -1,10 +1,23 @@
 
+// COLOR CONSTANTS
+const defaultPrimaryColor = "#fdf7ea";
+const defaultSecondaryColor = "#ec9832";
+const defaultTertiaryColor = "";
+
+// create random color code from #000000 to #FFFFFF
+function randColor()
+{
+    return "#" + Math.floor(Math.random() * 16**6).toString(16);
+}
+
+const randPrimaryColor = randColor();
+const randSecondaryColor = randColor();
+const randTertiaryColor = randColor();
+
+// END COLOR CONSTANTS
+
+
 // NAVBAR CONSTANTS
-
-const primaryColor = "#fdf7ea";
-const secondaryColor = "#ec9832";
-const tertiaryColor = "";
-
 const navItems = [
     {
         title: "Home",
@@ -20,43 +33,37 @@ const navItems = [
     }
 ];
 
-function randColor()
-{
-    return "#" + toString(parseInt(toString(Math.floor(Math.random() * 16**6)), 16));
-}
-// create random color code from #000000 to #FFFFFF
-let randPrimary = randColor();
-let randSecondary = randColor();
-
 // END NAVBAR CONSTANTS
 
-
-function initColors(nav)
+function initNavColors(nav)
 {
-    nav.style.backgroundColor = secondaryColor;
+    nav.style.backgroundColor = defaultSecondaryColor;
     let navItems = nav.querySelectorAll("div");
     for (let item of navItems)
     {
         // default background and text colors
-        item.style.backgroundColor = secondaryColor;
-        item.style.color = primaryColor;
+        item.style.backgroundColor = defaultSecondaryColor;
+        item.style.color = defaultPrimaryColor;
 
         // how they change
         item.addEventListener("mouseover", () => {
-            item.style.backgroundColor = primaryColor;
-            item.style.color = secondaryColor;
+            item.style.backgroundColor = defaultPrimaryColor;
+            item.style.color = defaultSecondaryColor;
         });
         item.addEventListener("mouseout", () => {
-            item.style.backgroundColor = secondaryColor;
-            item.style.color = primaryColor;
+            item.style.backgroundColor = defaultSecondaryColor;
+            item.style.color = defaultPrimaryColor;
         });
     }
 }
 
+function initFooterColors() {
+
+}
 
 window.addEventListener("load", () => {
     // set doc background
-    document.body.style.backgroundColor = primaryColor;
+    document.body.style.backgroundColor = defaultPrimaryColor;
     // NAVBAR
     // grab nav element
     let nav = document.querySelector("nav");
@@ -68,5 +75,13 @@ window.addEventListener("load", () => {
         a.setAttribute("href", item.href); // set href
         div.innerHTML = item.title; // set text
     }
-    initColors(nav);
+    // init nav colors
+    initNavColors(nav);
+
+    //FOOTER
+    // grab footer element
+    let footer = document.querySelector("footer");
+    // init footer colors
+    initFooterColors(footer);
+
 });
