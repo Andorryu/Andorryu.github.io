@@ -57,10 +57,15 @@ function initNavColors(nav)
     }
 }
 
-function initFooterColors() {
-
+function initFooterColors(footer, footerText) {
+    footer.style.backgroundColor = defaultSecondaryColor;
+    footerText.forEach(p => {
+        p.style.color = defaultPrimaryColor;
+    });
 }
 
+// only do stuff when its all loaded (i should change this later so that things only
+// happen when its related element loads)
 window.addEventListener("load", () => {
     // set doc background
     document.body.style.backgroundColor = defaultPrimaryColor;
@@ -81,7 +86,9 @@ window.addEventListener("load", () => {
     //FOOTER
     // grab footer element
     let footer = document.querySelector("footer");
+    // grab footer's <p> children
+    let footerText = footer.querySelectorAll("p");
     // init footer colors
-    initFooterColors(footer);
+    initFooterColors(footer, footerText);
 
 });
