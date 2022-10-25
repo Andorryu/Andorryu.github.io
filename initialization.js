@@ -87,6 +87,13 @@ window.addEventListener("load", () => {
     // init nav colors
     initNavColors(nav);
 
+    // ARTICLES
+    let articles = document.querySelectorAll("article");
+    for (let item of articles) {
+        
+    }
+
+
     //FOOTER
     // grab footer element
     let footer = document.querySelector("footer");

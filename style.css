@@ -44,6 +44,15 @@ nav div {
     width: inherit;
 }
 
+/* 
+  articles
+*/
+
+article h1 {
+  text-align: center;
+}
+
+
 /*
   footer
 */
