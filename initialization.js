@@ -21,14 +21,17 @@ const randTertiaryColor = randColor();
 const navItems = [
     {
         title: "Home",
-        href: "home.html"
+        id: "nav-home",
+        href: "index.html"
     },
     {
         title: "About Me",
+        id: "nav-about-me",
         href: "about_me.html"
     },
     {
         title: "Github",
+        id: "nav-github",
         href: "https://www.github.com/andorryu"
     }
 ];
@@ -78,6 +81,7 @@ window.addEventListener("load", () => {
         let a = nav.appendChild(document.createElement("a")); // create <a> inside <nav>
         let div = a.appendChild(document.createElement("div")); // create <div> inside <a>
         a.setAttribute("href", item.href); // set href
+        a.id = item.id;
         div.innerHTML = item.title; // set text
     }
     // init nav colors
