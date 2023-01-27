@@ -2,18 +2,80 @@
 <html>
     <head>
         <style>
-            div#wrapper {
-                background-color: gray;
-                position: absolute;
-                margin-top: 50%;
-                margin-left: 50%;
-                transform: translate(-50%, -50%)
+            div#title {
+                text-align: center;
+                font-size:large;
+            }
+            nav {
+                background-color:black;
+                overflow: hidden;
+            }
+            nav a {
+                display: block;
+                float: left;
+                background-color: black;
+                text-align: center;
+                padding: 12px 16px;
+                color: white;
+            }
+            div#board {
+                margin: 100px auto;
+                background-color: black;
+                padding: 20px;
+                width: 402px;
+            }
+            svg {
+                display: block;
+                background-color: white;
+                margin: auto;
+            }
+            line {
+                stroke: black;
+                stroke-width: 5px;
+            }
+            rect {
+                stroke: none;
+                fill: aqua;
+            }
+            div.row {
+                background-color: aqua;
+            }
+            div#space {
+                background-color: coral;
+            }
+            footer {
+                text-align: center;
+                padding: 3px;
+                background-color: black;
+                color: white;
             }
         </style>
     </head>
     <body>
-        <div id="wrapper">
-            <canvas></canvas>
+
+        <div id="title">
+            <h1>Competitive Tic-Tac-Toe</h1>
         </div>
+
+        <nav>
+            <a>link1</a>
+            <a>link1</a>
+        </nav>
+
+        <div id="board">
+            <svg height="402px", width="402px">
+                <!-- SPACES -->
+                <rect width="134" height="134"/>
+                <!-- LINES -->
+                <line x1="0" y1="134" x2="402" y2="134"/>
+                <line x1="0" y1="268" x2="402" y2="268"/>
+                <line x1="134" y1="0" x2="134" y2="402"/>
+                <line x1="268" y1="0" x2="268" y2="402"/>
+                <!-- /LINES -->
+            </svg>
+        </div>
+        <footer>
+            <p>By Andrew Dority</p>
+        </footer>
     </body>
 </html>
