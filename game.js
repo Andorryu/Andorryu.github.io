@@ -2,14 +2,14 @@
 // RANDOM IDEA: What if AI could be used to test the fairness of a competitive game?
 
 class Symbol {
-    constructor(/*imgSrc,*/ player) {
-        //this.img = document.createElement("img").setAttribute("src", imgSrc);
-        this.owner = player
+    constructor(player, img) {
+        this.img = img
+        this.owner = player;
     }
 }
 
 let board = [
-    [new Symbol("x"), new Symbol("x"), new Symbol("x")],
+    [new Symbol("x", "x.png"), new Symbol("x", "x.png"), new Symbol("x", "x.png")],
     [null, null, null],
     [null, null, null]
 ];
@@ -31,24 +31,28 @@ function checkWin(board) {
 }
 
 function onclick() {
+    let svg = document.querySelector("svg")
     this.style.fill = "yellow"; // 'this' refers to the space, since it is called in space's method
-    console.log("click!")
+    
     this.removeEventListener("click", onclick);
 
     let pos = [
-        space.getAttribute("row"),
-        space.getAttribute("col")
+        this.getAttribute("row"),
+        this.getAttribute("col")
     ]; // row, col
 
+
     // update board with change
-    board[pos[0]][pos[1]] = new Symbol("p1");
-    space.removeEventListener("click", onclick)
+    board[pos[0] - 1][pos[1] - 1] = new Symbol("p1", "x.png");
     // update UI
-    for (row of board) {
-        for (space of row) {
-            
+    for (let row = 0; row < 3; row++) {
+        for (let col = 0; col < 3; col++) {
+            if (board[row][col] != null) {
+                svg.appendChild(board[row][col].img);
+            }
         }
     }
+    this.removeEventListener("click", onclick);
 }
 
 
